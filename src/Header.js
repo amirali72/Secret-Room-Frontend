@@ -7,7 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
   const {userInfo, setUserInfo} = useContext(UserContext);
   useEffect(()=>{
-    fetch('http://localhost:4000/profile',{
+    fetch('https://secret-room-backend.onrender.com/profile',{
       credentials:'include',
     }).then(response=>{
       response.json().then(userInfo=>{
@@ -17,7 +17,7 @@ const Header = () => {
   },[setUserInfo])
 
   function logout(){
-      fetch('http://localhost:4000/logout',{
+      fetch('https://secret-room-backend.onrender.com/logout',{
       credentials:'include',
       method:'POST',
     });
